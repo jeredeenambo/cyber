@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details Submitted</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        body {
+            text-align: center;
+            background-image: url('./IMAGES/buffalomall.jpg'); /* Replace 'background.jpg' with your actual background image URL */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            padding: 20px; /* Add padding to center content */
+            animation: heartbeat 1.8s infinite; /* Add heartbeat animation to the body */
+            color: white;
+        }
+        #content {
+            background-color: rgba(0, 0, 0, 0.5); /* Add semi-transparent white background to content */
+            padding: 20px; /* Add padding to content */
+            border-radius: 10px; /* Add border radius to content */
+            display: inline-block; /* Make content center horizontally */
+        }
+        #heart {
+            position: absolute;
+            top: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: heartbeat 1s infinite;
+            width: 50px;
+        }
+        @keyframes heartbeat {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+
+        }
+        
+    </style>
+</head>
+<body>
+    <section>
+        <div id="heart">
+        <img src="./IMAGES/ICT1.p" alt="">
+    </div>
+
+    </section>
+    <section style="margin-top: 200px">
+    <div id="content">
+        <h1>
+            Thank you for contancting Jnetworks ICT centre.
+        </h1>
+        <p><h4>Your request has been received.<br> Kindly be patient as our team work on it, <br> you will receive your feedback instantly or in 30. <br>Incase of delays whatsapp or call us on 0701532183 </h4></p> <br>
+        <button style="background-color: #0096FF; color: white;border-radius: 10px; " onclick="redirectToHome()"><h4>BACK</h4></button>
+
+    </div>
+    </section>
+    
+   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        swal({
+            title: "Details successfully Submitted",
+            text: "Your request is being processed. Thank you!",
+            icon: "success",
+            showConfirmButton: true // Remove the OK button
+        });
+    });
+
+    function redirectToHome() {
+        window.location.href = "index.html"; // Change "home.html" to your actual home page URL
+    }
+</script>
+
+    </section>
+
+</body>
+</html>

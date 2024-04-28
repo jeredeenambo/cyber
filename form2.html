@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.1.2/sweetalert2.min.css">
+<title>KRA Email Change Form</title>
+<style>
+    body {
+        background-image: url('./IMAGES/buffalomall.jpg'); /* Specify the path to your background image */
+        background-size: cover;
+        background-position: center;
+        font-family: Arial, sans-serif; /* Specify your preferred font */
+        color: white; /* Text color */
+    }
+    form {
+        max-width: 400px;
+        margin: 0 auto;
+        background-color: rgba(255, 0, 0, 0.5); /* Background color with transparency */
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Drop shadow */
+    }
+    input[type="text"], input[type="email"], input[type="tel"], input[type="file"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    input[type="file"] {
+        cursor: pointer;
+    }
+    .button {
+  position: relative;
+  padding: 8px 16px;
+  background: blue;
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.button:active {
+  background: #007a63;
+}
+
+.button__text {
+  font: bold 15px "Arial", san-serif;
+  color: #ffffff;
+  transition: all 0.2s;
+}
+
+.button--loading .button__text {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.button--loading::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  border: 4px solid transparent;
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: button-loading-spinner 1s ease infinite;
+}
+
+@keyframes button-loading-spinner {
+  from {
+    transform: rotate(0turn);
+  }
+
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+ /* Logo styling */
+    .logo {
+        display: block;
+        margin: 0 auto 20px; /* Center the logo and add spacing below */
+        border-radius: 50%; /* Add border radius */
+        animation: rotateLogo 5s linear infinite; /* Rotate the logo continuously */
+    }
+
+    @keyframes rotateLogo {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    /* Digital clock styling */
+    .clock {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        font-size: 18px;
+    }
+    }
+        .blinking-star {
+            animation: blink 2s infinite;
+            color: whitesmoke;
+            font-size: 20px;
+            position: absolute;
+            bottom: -1px;
+            right: -1px;
+            background-color: rgba(0, 0, 0, 0.5);;
+        }
+        @keyframes blink {
+            0% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+</style>
+</head>
+<body>
+<div class="clock" id="clock">Status: <span id="status">Open</span> | Time: <span id="time"></span></div><br><br>
+
+<script type="text/javascript">var submitted=false</script>
+<iframe name="hiddenConfirm" id="hiddenConfirm" style="display: none;" onload="if(submitted){
+    window.location='page2.html';}"></iframe>
+<form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdhkP2ex88MhbtbmwN8dggFjHgwl4vp2UtrXGrY2tqvLydqfw/formResponse" method="POST" target="hiddenConfirm" onsubmit="submitted=true">
+    <img class="logo" src="./IMAGES/KRA.png" alt="Logo" width="50" height="50">
+    <h2>KRA Email Change Details</h2>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="entry.35921650" required>
+
+    <label for="name">KRA PIN:</label>
+    <input type="text" id="KRA" name="entry.317554394" required>
+
+    <label for="email">New Email:</label>
+    <input type="email" id="email" name="entry.591865780" required>
+
+    <label for="phone">Phone:</label>
+    <input type="tel" id="phone" name="entry.1769237087"  required>
+    
+
+    <p>Please select how you want to receive feedback:</p>
+    <input type="radio" id="email" name="entry.797294607" value="email">
+    <label for="email">Email</label><br>
+    <input type="radio" id="Whatsapp" name="entry.797294607" value="Whatsapp">
+    <label for="Whatsapp">Whatsapp</label><br><br>
+
+    PAYMENT LIPA NA MPESA Till No <B>5253321</B> AMOUNT 200/=<br><br>
+
+    <label for="name">Name appearing on payment record:</label>
+    <input type="text" id="name" name="entry.1550484823" required>
+
+     
+    
+    <button type="submit" class="button" onclick="this.classList.toggle('button--loading')">
+    <span class="button__text">SUBMIT</span>
+</button>
+</form>
+
+<div class="blinking-star">
+        &#9733;Jnetworks ICT Centre &#9733;
+    </div>
+
+<script>
+    // Get current time and update clock
+    function updateClock() {
+        var now = new Date();
+        var hours = now.getHours();
+        var minutes = now.getMinutes();
+        var seconds = now.getSeconds();
+        var timeElement = document.getElementById('time');
+
+        // Format time
+        var timeString = formatTime(hours) + ":" + formatTime(minutes) + ":" + formatTime(seconds);
+
+        // Update clock
+        timeElement.textContent = timeString;
+    }
+
+    // Format time to add leading zero if needed
+    function formatTime(time) {
+        return (time < 10 ? "0" + time : time);
+    }
+
+    // Get current time and update status
+    function updateTimeAndStatus() {
+        var now = new Date();
+        var hours = now.getHours();
+        var statusElement = document.getElementById('status');
+
+        // Set status based on time
+        if (hours >= 6 && hours < 20) {
+            statusElement.textContent = 'Open until 8pm';
+        } else {
+            statusElement.textContent = 'Closed until 8am';
+        }
+
+        // Update clock
+        updateClock();
+    }
+
+    // Update time and status every second
+    setInterval(updateTimeAndStatus, 1000);
+
+    // Initial update
+    updateTimeAndStatus();
+</script>
+</body>
+</html>
+

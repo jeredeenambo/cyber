@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.1.2/sweetalert2.min.css">
+<title>KRA Email Change</title>
+<style>
+    body {
+        font-family: Arial, sans-serif; /* Specify your preferred font */
+        color: white; /* Text color */
+        background-color: #0000ff80; /* Background color */
+    }
+    form {
+        max-width: 400px;
+        margin: 0 auto;
+        background-color: rgba(255, 0, 0, 0.5); /* Semi-transparent red background color */
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Drop shadow */
+    }
+    input[type="text"], input[type="email"], input[type="tel"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+    /* Logo styling */
+    .logo {
+        display: block;
+        margin: 0 auto 20px; /* Center the logo and add spacing below */
+        border-radius: 50%; /* Add border radius */
+        animation: rotateLogo 5s linear infinite; /* Rotate the logo continuously */
+    }
+
+    @keyframes rotateLogo {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    /* Digital clock styling */
+    .clock {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        font-size: 18px;
+    }
+</style>
+</head>
+<body>
+<div class="clock" id="clock">Status: <span id="status">Open</span> | Time: <span id="time"></span></div>
+<img class="logo" src="./IMAGES/KRA.png" alt="Logo" width="50" height="50">
+<fieldset><center>KRA EMAIL CHANGE</center></fieldset>
+<script type="text/javascript">var submitted=false</script>
+<iframe name="hiddenConfirm" id="hiddenConfirm" style="display: none;" onload="if(submitted){
+    window.location='page2.html';}"></iframe>
+<form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdhkP2ex88MhbtbmwN8dggFjHgwl4vp2UtrXGrY2tqvLydqfw/formResponse" method="POST" target="hiddenConfirm" onsubmit="submitted=true">
+    <label for="name">NAME:</label>
+    <input type="text" id="name" name="entry.35921650" required>
+
+    <label for="name">KRA PIN:</label>
+    <input type="text" id="KRA" name="entry.317554394" required>
+
+    <label for="email">NEW EMAIL ADDRESS:</label>
+    <input type="email" id="email" name="entry.591865780" required>
+
+    <label for="phone">PHONE NO:</label>
+    <input type="tel" id="phone" name="entry.1769237087"  required>
+    
+    <p>Please select how you want to receive feedback:</p>
+    <input type="radio" id="email" name="entry.797294607" value="email">
+    <label for="email">Email</label><br>
+    <input type="radio" id="Whatsapp" name="entry.797294607" value="Whatsapp">
+    <label for="Whatsapp">Whatsapp</label><br><br>
+
+    PAYMENT LIPA NA MPESA Till No <B>567382</B> AMOUNT 200/=<br><br>
+
+    <label for="name">Name appearing on payment record:</label>
+    <input type="text" id="name" name="entry.1550484823" required>
+
+    <button type="submit">SUBMIT</button>
+</form>
+
+<script>
+    // Get current time and update clock
+    function updateClock() {
+        var now = new Date();
+        var hours = now.getHours();
+        var minutes = now.getMinutes();
+        var seconds = now.getSeconds();
+        var timeElement = document.getElementById('time');
+
+        // Format time
+        var timeString = formatTime(hours) + ":" + formatTime(minutes) + ":" + formatTime(seconds);
+
+        // Update clock
+        timeElement.textContent = timeString;
+    }
+
+    // Format time to add leading zero if needed
+    function formatTime(time) {
+        return (time < 10 ? "0" + time : time);
+    }
+
+    // Get current time and update status
+    function updateTimeAndStatus() {
+        var now = new Date();
+        var hours = now.getHours();
+        var statusElement = document.getElementById('status');
+
+        // Set status based on time
+        if (hours >= 6 && hours < 20) {
+            statusElement.textContent = 'Open';
+        } else {
+            statusElement.textContent = 'Closed';
+        }
+
+        // Update clock
+        updateClock();
+    }
+
+    // Update time and status every second
+    setInterval(updateTimeAndStatus, 1000);
+
+    // Initial update
+    updateTimeAndStatus();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,121 @@
+ .slideshow-container1 {
+    position: relative;
+    width:100 px ;
+    max-width:200 px; /* Adjust as needed */
+    margin: auto;
+    overflow: hidden;
+}
+
+.image-slide {
+    display: none;
+}
+
+.fade {
+    animation: fadeEffect 5s ease-in-out infinite;
+}
+
+@keyframes fadeEffect {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+.overlay {
+        position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      padding: 10px;
+      text-align: center;
+      animation: bounceIn 0.7s ease-in-out 3s forwards;
+  }
+ @keyframes bounceIn {
+    0% {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.5);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+
+  .last-word {
+    color: orange;
+}
+.image-slide img {
+    width: 100%; /* Set a fixed width for all images */
+    height: auto; /* Maintain aspect ratio */
+  }
+  .rounded {
+    border: 2px; /* Add blue color borders */
+    border-radius: 10px; /* Add rounded corners */
+    overflow: hidden; /* Ensure content stays within borders */
+}
+.bg-navy {
+      background-color: navy !important; /* Use !important to override Bootstrap's default  bootstrab colour change*/
+    }
+.bg-yellowgreen{
+    background-color: yellowgreen !important;
+}
+a:link { 
+  text-decoration: none; 
+} 
+
+      /*floating whatsapp*/
+}
+.whatsapp-float {
+    position: fixed;
+    bottom: 40px;
+    right: 20px;
+    z-index: 100;
+  }
+
+  .whatsapp-float img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+
+  .whatsapp-float img:hover {
+    transform: scale(1.1);
+  }
+
+  .blink {
+    animation: blink 1s infinite;
+    color: limegreen; /* Change the color  */
+    background-color: transparent;
+  }
+
+  @keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  /* Container styling */
+  .whatsapp-container {
+    position: fixed;
+    bottom: 40px;
+    right: 20px;
+    z-index: 100;
+    text-align: center;
+  }
+

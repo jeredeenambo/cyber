@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.1.2/sweetalert2.min.css">
+<title>Form</title>
+<style>
+    body {
+        background-image: url('./IMAGES/buffalomall.jpg'); /* Specify the path to your background image */
+        background-size: cover;
+        background-position: center;
+        font-family: Arial, sans-serif; /* Specify your preferred font */
+        color: white; /* Text color */
+    }
+    form {
+        max-width: 400px;
+        margin: 0 auto;
+        background-color: #0000ff80;; /* Background color with transparency */
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Drop shadow */
+    }
+    input[type="text"], input[type="email"], input[type="tel"], input[type="file"],input[type="date"],select[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    input[type="file"] {
+        cursor: pointer;
+    }
+    .button {
+  position: relative;
+  padding: 8px 16px;
+  background: #009579;
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.button:active {
+  background: #007a63;
+}
+
+.button__text {
+  font: bold 15px "Arial", san-serif;
+  color: #ffffff;
+  transition: all 0.2s;
+}
+
+.button--loading .button__text {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.button--loading::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  border: 4px solid transparent;
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: button-loading-spinner 1s ease infinite;
+}
+
+@keyframes button-loading-spinner {
+  from {
+    transform: rotate(0turn);
+  }
+
+  to {
+    transform: rotate(1turn);
+  }
+}
+    
+     }
+         .blinking-star {
+            animation: blink 2s infinite;
+            color: whitesmoke;
+            font-size: 20px;
+            position: absolute;
+            bottom: -1px;
+            right: -1px;
+            background-color: rgba(0, 0, 0, 0.5);;
+        }
+        @keyframes blink {
+            0% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+        /* Spinner CSS */
+    .spinner {
+        border: 4px solid rgba(0, 0, 0, 0.1);
+        border-left-color: #4CAF50;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        animation: spin 1s linear infinite;
+        margin: 20px auto;
+        display: none; /* Hide spinner initially */
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+    /* Logo styling */
+    .logo {
+        display: block;
+        margin: 0 auto 20px; /* Center the logo and add spacing below */
+        border-radius: 50%; /* Add border radius */
+        animation: rotateLogo 5s linear infinite; /* Rotate the logo continuously */
+    }
+
+    @keyframes rotateLogo {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    /* Digital clock styling */
+    .clock {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        font-size: 18px;
+    }
+</style>
+</head>
+<body>
+<div class="clock" id="clock">Status: <span id="status">Open</span> | Time: <span id="time"></span></div><br><br>
+
+<script type="text/javascript">var submitted=false</script>
+<iframe name="hiddenConfirm" id="hiddenConfirm" style="display: none;" onload="if(submitted){
+    window.location='page2.html';}"></iframe>
+<form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSe1NE5piBhY1dojCywp9p1-KZ-kvuaH0cwpJuhwzsOvooXSbw/formResponse" method="POST" target="hiddenConfirm" onsubmit="submitted=true">
+    <img class="logo" src="./IMAGES/nhif.png" alt="Logo" width="50" height="50">
+     <h2>NHIF Registration Details</h2>
+    <label for="name">NAME:</label>
+    <input type="text" id="name" name="entry.1318349547" required>
+
+    <label for="KRA">ID NO:</label>
+    <input type="text" id="KRA" name="entry.544942830" required>
+
+    <label for="county">COUNTY:</label>
+    <select type="text" id="county" name="entry.1312111647">
+         <option value="Nairobi">NAIROBI</option>
+         <option value="Mombasa">MOMBASA</option>
+        <option value="Kwale">KWALE</option>
+        <option value="Kilifi">KILIFI</option>
+        <option value="Kilifi">TANA RIVER</option>
+        <option value="Kilifi">LAMU</option>
+        <option value="Kilifi">TAITA TAVETA</option>
+        <option value="Kilifi">GARISSA</option>
+        <option value="Kilifi">WAJIR</option>
+        <option value="Kilifi">MANDERA</option>
+        <option value="Kilifi">MARASABIT</option>
+        <option value="Kilifi">ISIOLO</option>
+        <option value="Kilifi">MERU</option>
+        <option value="Kilifi">THARAKA NITHI</option>
+        <option value="Kilifi">EMBU</option>
+        <option value="Kilifi">KITUI</option>
+        <option value="Kilifi">MAKUENI</option>
+        <option value="Kilifi">KISUMU</option>
+        <option value="Kilifi">KAKAMEGA</option>
+        <option value="Kilifi">VIHIGA</option>
+        <option value="Kilifi">BUNGOMA</option>
+        <option value="Kilifi">BUSIA</option>
+        <option value="Kilifi">KISII</option>
+        <option value="Kilifi">NYAMIRA</option>
+        <option value="Kilifi">NAKURU</option>
+        <option value="Kilifi">NYANDARUA</option>
+        <option value="Kilifi">MACHAKOS</option>
+        <option value="Kilifi">MAKUENI</option>
+        <option value="Kilifi">BOMET</option>
+        <option value="Kilifi">BARINGO</option>
+        <option value="Kilifi">USIN GISHU</option>
+        <option value="Kilifi">NYERI</option>
+        <option value="Kilifi">KIRINYAGA</option>
+        <option value="Kilifi">MURANG'A</option>
+        <option value="Kilifi">KIAMBU</option>
+        <option value="Kilifi">TURKANA</option>
+        <option value="Kilifi">WEST POKOT</option>
+        <option value="Kilifi">SAMBURU</option>
+        <option value="Kilifi">TRANS-NZOIA</option>
+        <option value="Kilifi">ELGEYO MARAKWET</option>
+        <option value="Kilifi">NANDI</option>
+        <option value="Kilifi">LAIKIPIA</option>
+        <option value="Kilifi">NAROK</option>
+        <option value="Kilifi">KAJIADO</option>
+        <option value="Kilifi">KERICHO</option>
+        <option value="Kilifi">SIAYA</option>
+        <option value="Kilifi">HOMABAY</option>
+        <option value="Kilifi">MIGORI</option>
+        <!-- END OF COUNTIES -->
+    </select> <br><br>
+
+    <label for="email">EMAIL ADDRESS:</label>
+    <input type="email" id="email" name="entry.1127216801" required>
+
+    <label for="phone">PHONE NO:</label>
+    <input type="tel" id="phone" name="entry.696192215" required>
+
+     <label for="date">DATE OF BIRTH:</label>
+    <input type="date" id="date" name="entry.109843477" required>
+
+    <p>Please select how you want to receive feedback:</p>
+    <input type="radio" id="emailFeedback" name="entry.512616488" value="email">
+    <label for="emailFeedback">Email</label><br>
+    <input type="radio" id="whatsappFeedback" name="entry.512616488" value="whatsapp">
+    <label for="whatsappFeedback">Whatsapp</label><br><br>
+
+    PAYMENT: LIPA NA MPESA Till No <B><h3>5253321</h3></B> AMOUNT 200/=<br><br>
+
+    <label for="paymentName">NAME APPEARING ON PAYMENT RECORD:</label>
+    <input type="text" id="paymentName" name="entry.2027899986" required>
+
+    
+    <button type="submit" class="button" onclick="this.classList.toggle('button--loading')">
+    <span class="button__text">SUBMIT</button>
+</form>
+
+<div class="spinner" id="spinner"></div>
+
+<div class="blinking-star">
+        &#9733;Jnetworks ICT Centre &#9733;
+    </div>
+
+    <script>
+    function showSpinner() {
+        // Show spinner
+        document.getElementById('spinner').style.display = 'block';
+        // After 5 seconds, hide the spinner
+        setTimeout(function() {
+            document.getElementById('spinner').style.display = 'none';
+        }, 5000); // 5000 milliseconds = 5 seconds
+    }
+</script>
+
+<script>
+    // Get current time and update clock
+    function updateClock() {
+        var now = new Date();
+        var hours = now.getHours();
+        var minutes = now.getMinutes();
+        var seconds = now.getSeconds();
+        var timeElement = document.getElementById('time');
+
+        // Format time
+        var timeString = formatTime(hours) + ":" + formatTime(minutes) + ":" + formatTime(seconds);
+
+        // Update clock
+        timeElement.textContent = timeString;
+    }
+
+    // Format time to add leading zero if needed
+    function formatTime(time) {
+        return (time < 10 ? "0" + time : time);
+    }
+
+    // Get current time and update status
+    function updateTimeAndStatus() {
+        var now = new Date();
+        var hours = now.getHours();
+        var statusElement = document.getElementById('status');
+
+        // Set status based on time
+        if (hours >= 6 && hours < 20) {
+            statusElement.textContent = 'Open until 8pm';
+        } else {
+            statusElement.textContent = 'Closed until 8am';
+        }
+
+        // Update clock
+        updateClock();
+    }
+
+    // Update time and status every second
+    setInterval(updateTimeAndStatus, 1000);
+
+    // Initial update
+    updateTimeAndStatus();
+</script>
+</body>
+</html>
+
